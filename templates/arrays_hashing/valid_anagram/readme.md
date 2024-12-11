@@ -1,6 +1,7 @@
 # 242. Valid Anagram
 
 [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
+
 [Neetcode Solution](https://www.youtube.com/watch?v=9UtInBqnCgA&pp=ygUWbmVldGNvZGUgdmFsaWQgYW5hZ3JhbQ%3D%3D)
 
 Given two strings `s` and `t`, return `true` if `t` is an anagram of `s`, and

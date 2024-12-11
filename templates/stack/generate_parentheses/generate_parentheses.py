@@ -9,4 +9,13 @@ class Solution:
 if __name__ == "__main__":
     solution = Solution()
     print(solution.generateParenthesis(n=3))
+    assert solution.generateParenthesis(n=3) == [
+        "((()))",
+        "(()())",
+        "(())()",
+        "()(())",
+        "()()()",
+    ]
+
     print(solution.generateParenthesis(n=1))
+    assert solution.generateParenthesis(n=1) == ["()"]

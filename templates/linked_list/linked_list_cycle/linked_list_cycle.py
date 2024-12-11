@@ -45,11 +45,14 @@ if __name__ == "__main__":
     head_1 = array_to_linked_list(arr=[3, 2, 0, -4], pos=1)
     head_has_cycle_1 = solution.hasCycle(head_1)
     print(head_has_cycle_1)
+    assert head_has_cycle_1 == True
 
     head_2 = array_to_linked_list(arr=[1, 2], pos=0)
     head_has_cycle_2 = solution.hasCycle(head_2)
     print(head_has_cycle_2)
+    assert head_has_cycle_2 == True
 
     head_3 = array_to_linked_list(arr=[1], pos=-1)
     head_has_cycle_3 = solution.hasCycle(head_3)
     print(head_has_cycle_3)
+    assert head_has_cycle_3 == False

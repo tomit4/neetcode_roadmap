@@ -42,10 +42,13 @@ if __name__ == "__main__":
     list_3 = array_to_linked_list([2, 6])
     merged_k_list_1 = solution.mergeKLists([list_1, list_2, list_3])
     print(linked_list_to_array(merged_k_list_1))
+    assert linked_list_to_array(merged_k_list_1) == [1, 1, 2, 3, 4, 4, 5, 6]
 
     merged_k_list_2 = solution.mergeKLists([])
     print(linked_list_to_array(merged_k_list_2))
+    assert linked_list_to_array(merged_k_list_2) == []
 
-    list_4 = array_to_linked_list([])
+    list_4 = array_to_linked_list([[]])
     merged_k_list_3 = solution.mergeKLists([list_4])
     print(linked_list_to_array(merged_k_list_3))
+    assert linked_list_to_array(merged_k_list_3) == []

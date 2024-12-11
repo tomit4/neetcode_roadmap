@@ -23,9 +23,14 @@ if __name__ == "__main__":
     lRUCache.put(1, 1)
     lRUCache.put(2, 2)
     print(lRUCache.get(1))
+    assert lRUCache.get(1) == 1
     lRUCache.put(3, 3)
     print(lRUCache.get(2))
+    assert lRUCache.get(2) == -1
     lRUCache.put(4, 4)
     print(lRUCache.get(1))
+    assert lRUCache.get(1) == -1
     print(lRUCache.get(3))
+    assert lRUCache.get(3) == 3
     print(lRUCache.get(4))
+    assert lRUCache.get(4) == 4

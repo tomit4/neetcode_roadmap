@@ -1,6 +1,7 @@
 # 128. Longest Consecutive Sequence
 
 [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/description/)
+
 [Neetcode Solution](https://www.youtube.com/watch?v=P6RZZMu_maU&pp=ygUlbmVldGNvZGUgbG9uZ2VzdCBjb25zZWN1dGl2ZSBzZXF1ZW5jZQ%3D%3D)
 
 Given an unsorted array of integers nums, return the length of the longest
@@ -25,5 +26,5 @@ Output: 9
 
 **Constraints:**
 
-- `0 <= nums.length <= 105`
-- `-109 <= nums[i] <= 109`
+- `0 <= nums.length <= 10^5`
+- `-10^9 <= nums[i] <= 10^9`

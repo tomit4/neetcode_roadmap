@@ -40,11 +40,14 @@ if __name__ == "__main__":
     head_1 = array_to_linked_list([1, 2, 3, 4, 5])
     reversed_head_1 = solution.reverseList(head_1)
     print(linked_list_to_array(reversed_head_1))
+    assert linked_list_to_array(reversed_head_1) == [5, 4, 3, 2, 1]
 
     head_2 = array_to_linked_list([1, 2])
     reversed_head_2 = solution.reverseList(head_2)
     print(linked_list_to_array(reversed_head_2))
+    assert linked_list_to_array(reversed_head_2) == [2, 1]
 
     head_3 = array_to_linked_list([])
     reversed_head_3 = solution.reverseList(head_3)
     print(linked_list_to_array(reversed_head_3))
+    assert linked_list_to_array(reversed_head_3) == []

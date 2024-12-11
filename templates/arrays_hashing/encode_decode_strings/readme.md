@@ -1,6 +1,7 @@
 # 659 Encode and Decode Strings
 
 [Encode and Decode Strings](https://neetcode.io/problems/string-encode-and-decode)
+
 [Neetcode Solution](https://www.youtube.com/watch?v=B1k_sxOSgv8&pp=ygUibmVldGNvZGUgZW5jb2RlIGFuZCBkZWNvZGUgc3RyaW5ncw%3D%3D)
 
 Design an algorithm to encode a list to a string. The encoded string is then

@@ -59,11 +59,20 @@ if __name__ == "__main__":
     head_1 = array_to_linked_list([[7, None], [13, 0], [11, 4], [10, 2], [1, 0]])
     copied_random_list_1 = solution.copyRandomList(head_1)
     print(linked_list_to_array(copied_random_list_1))
+    assert linked_list_to_array(copied_random_list_1) == [
+        [7, None],
+        [13, 0],
+        [11, 4],
+        [10, 2],
+        [1, 0],
+    ]
 
     head_2 = array_to_linked_list([[1, 1], [2, 1]])
     copied_random_list_2 = solution.copyRandomList(head_2)
     print(linked_list_to_array(copied_random_list_2))
+    assert linked_list_to_array(copied_random_list_2) == [[1, 1], [2, 1]]
 
     head_3 = array_to_linked_list([[3, None], [3, 0], [3, None]])
     copied_random_list_3 = solution.copyRandomList(head_3)
     print(linked_list_to_array(copied_random_list_3))
+    assert linked_list_to_array(copied_random_list_3) == [[3, None], [3, 0], [3, None]]

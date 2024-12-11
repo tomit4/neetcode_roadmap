@@ -1,6 +1,7 @@
 # 238. Product of Array Except Self
 
 [LeetCode](https://leetcode.com/problems/product-of-array-except-self/)
+
 [Neetcode Solution](https://www.youtube.com/watch?v=bNvIQI2wAjk&pp=ygUccHJvZHVjdCBvZiBhcnJheSBleGNlcHQgc2VsZg%3D%3D)
 
 Given an integer array `nums`, return <em>an array</em> `answer` <em>such
@@ -27,7 +28,7 @@ Input: nums = [-1,1,0,-3,3] Output: [0,0,9,0,0]
 
 **Constraints:**
 
-- `2 <= nums.length <= 105`
+- `2 <= nums.length <= 10^5`
 - `-30 <= nums[i] <= 30`
 - The product of any prefix or suffix of `nums` is <b>guaranteed</b> to fit in a
   <b>32-bit</b> integer.

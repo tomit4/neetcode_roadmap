@@ -8,7 +8,7 @@ class Solution:
 
 if __name__ == "__main__":
     solution = Solution()
-    board: List[List[str]] = [
+    board_1: List[List[str]] = [
         ["5", "3", ".", ".", "7", ".", ".", ".", "."],
         ["6", ".", ".", "1", "9", "5", ".", ".", "."],
         [".", "9", "8", ".", ".", ".", ".", "6", "."],
@@ -19,8 +19,10 @@ if __name__ == "__main__":
         [".", ".", ".", "4", "1", "9", ".", ".", "5"],
         [".", ".", ".", ".", "8", ".", ".", "7", "9"],
     ]
-    print(solution.isValidSudoku(board=board))
-    board: List[List[str]] = [
+    print(solution.isValidSudoku(board=board_1))
+    assert solution.isValidSudoku(board=board_1) == True
+
+    board_2: List[List[str]] = [
         ["8", "3", ".", ".", "7", ".", ".", ".", "."],
         ["6", ".", ".", "1", "9", "5", ".", ".", "."],
         [".", "9", "8", ".", ".", ".", ".", "6", "."],
@@ -31,4 +33,5 @@ if __name__ == "__main__":
         [".", ".", ".", "4", "1", "9", ".", ".", "5"],
         [".", ".", ".", ".", "8", ".", ".", "7", "9"],
     ]
-    print(solution.isValidSudoku(board=board))
+    print(solution.isValidSudoku(board=board_2))
+    assert solution.isValidSudoku(board=board_2) == False

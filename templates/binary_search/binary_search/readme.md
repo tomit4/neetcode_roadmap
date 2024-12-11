@@ -1,6 +1,7 @@
 # 704. Binary Search
 
 [Binary Search](https://leetcode.com/problems/binary-search/description/)
+
 [Neetcode Solution](https://www.youtube.com/watch?v=s4DPM8ct1pI&pp=ygUWbmVldGNvZGUgYmluYXJ5IHNlYXJjaA%3D%3D)
 Given an array of integers `nums` which is sorted in ascending order, and an
 integer `target`, write a function to search `target` in `nums`. If `target`
@@ -26,7 +27,7 @@ Explanation: 2 does not exist in nums so return -1
 
 **Constraints:**
 
-- `1 <= nums.length <= 104`
-- `-104 < nums[i], target < 104`
+- `1 <= nums.length <= 10^4`
+- `-10^4 < nums[i], target < 10^4`
 - All the integers in `nums` are <b>unique</b>.
 - `nums` is sorted in ascending order.

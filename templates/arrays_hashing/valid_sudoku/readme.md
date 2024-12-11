@@ -1,6 +1,7 @@
 # 36. Valid Sudoku Medium Topics Companies
 
 [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/description/)
+
 [Neetcode Solution](https://www.youtube.com/watch?v=TjFXEUCMqI8&pp=ygUVbmVldGNvZGUgdmFsaWQgc3Vkb2t1)
 
 Determine if a `9 x 9` Sudoku board is valid. Only the filled cells need to be

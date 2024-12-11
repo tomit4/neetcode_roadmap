@@ -64,8 +64,8 @@ Explanation:
 **Constraints:**
 
 - `n == position.length == speed.length`
-- `1 <= n <= 105`
-- `0 < target <= 106`
+- `1 <= n <= 10^5`
+- `0 < target <= 10^6`
 - `0 <= position[i] < target`
 - All the values of `position` are <b>unique</b>.
-- `0 < speed[i] <= 106`
+- `0 < speed[i] <= 10^6`

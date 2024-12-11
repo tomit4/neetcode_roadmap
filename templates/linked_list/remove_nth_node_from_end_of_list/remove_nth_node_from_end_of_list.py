@@ -40,11 +40,14 @@ if __name__ == "__main__":
     head_1 = array_to_linked_list([1, 2, 3, 4, 5])
     list_with_n_removed_1 = solution.removeNthFromEnd(head=head_1, n=2)
     print(linked_list_to_array(list_with_n_removed_1))
+    assert linked_list_to_array(list_with_n_removed_1) == [1, 2, 3, 5]
 
     head_2 = array_to_linked_list([1])
     list_with_n_removed_2 = solution.removeNthFromEnd(head=head_2, n=1)
     print(linked_list_to_array(list_with_n_removed_2))
+    assert linked_list_to_array(list_with_n_removed_2) == []
 
     head_3 = array_to_linked_list([1, 2])
     list_with_n_removed_3 = solution.removeNthFromEnd(head=head_3, n=1)
     print(linked_list_to_array(list_with_n_removed_3))
+    assert linked_list_to_array(list_with_n_removed_3) == [1]

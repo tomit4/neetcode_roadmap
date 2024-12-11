@@ -32,16 +32,17 @@ def linked_list_to_array(head: ListNode | None):
 
 class Solution:
     def reorderList(self, head: Optional[ListNode]) -> None:
-        """
-        Do not return anything, modify head in-place instead.
-        """
-        print(linked_list_to_array(head))
+        return None
 
 
 if __name__ == "__main__":
     solution = Solution()
     head_1 = array_to_linked_list([1, 2, 3, 4])
     solution.reorderList(head_1)
+    print(linked_list_to_array(head_1))
+    assert linked_list_to_array(head_1) == [1, 4, 2, 3]
 
     head_2 = array_to_linked_list([1, 2, 3, 4, 5])
     solution.reorderList(head_2)
+    print(linked_list_to_array(head_2))
+    assert linked_list_to_array(head_2) == [1, 5, 2, 4, 3]

@@ -43,6 +43,6 @@ timeMap.get("foo", 4); // return "bar2" timeMap.get("foo", 5); // return "bar2"
 
 - `1 <= key.length, value.length <= 100`
 - `key` and `value` consist of lowercase English letters and digits.
-- `1 <= timestamp <= 107`
+- `1 <= timestamp <= 10^7`
 - All the timestamps `timestamp` of `set` are strictly increasing.
-- At most `2 * 105` calls will be made to `set` and `get`.
+- At most `2 * 10^5` calls will be made to `set` and `get`.

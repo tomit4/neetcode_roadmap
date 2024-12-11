@@ -44,7 +44,7 @@ Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We ret
 
 **Constraints:**
 
-- `2 <= numbers.length <= 3 * 104`
+- `2 <= numbers.length <= 3 * 10^4`
 - `-1000 <= numbers[i] <= 1000`
 - `numbers` is sorted in <b>non-decreasing order</b>.
 - `-1000 <= target <= 1000`

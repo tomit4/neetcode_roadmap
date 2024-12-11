@@ -40,7 +40,9 @@ if __name__ == "__main__":
     head_1 = array_to_linked_list([1, 2, 3, 4, 5])
     reversed_k_group_1 = solution.reverseKGroup(head=head_1, k=2)
     print(linked_list_to_array(reversed_k_group_1))
+    assert linked_list_to_array(reversed_k_group_1) == [2, 1, 4, 3, 5]
 
     head_2 = array_to_linked_list([1, 2, 3, 4, 5])
     reversed_k_group_2 = solution.reverseKGroup(head=head_2, k=3)
     print(linked_list_to_array(reversed_k_group_2))
+    assert linked_list_to_array(reversed_k_group_2) == [3, 2, 1, 4, 5]

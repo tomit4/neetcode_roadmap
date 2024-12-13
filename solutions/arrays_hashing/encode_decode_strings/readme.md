@@ -11,7 +11,7 @@ Please implement `encode` and `decode`.
 **Example 1:**
 
 ```
-Input: ["list", "code", "love", "you"]
+Input: ["lint", "code", "love", "you"]
 Output: ["lint", "code", "love", "you"]
 ```
 

@@ -21,10 +21,3 @@ Following a simple list of must do leetcode exercises in order:
 [Motivation & Strategy Hints](https://redlib.kylrth.com/r/learnprogramming/comments/12ghao8/a_guide_to_grinding_leetcode/)
 
 [NeetCode's Blind75 Hints SpreadSheet](https://docs.google.com/spreadsheets/u/0/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/htmlview)
-
-**Left Off:**
-
-**TODO:**
-
-- [ ] Create an ordered `README` list in each subject folder detailing the order
-      one should go through each problem.

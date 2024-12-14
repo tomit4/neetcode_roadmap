@@ -1,2 +1,4 @@
 *.vim
 attempts
+bin
+*.clang-format

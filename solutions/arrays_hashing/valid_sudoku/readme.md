@@ -1,4 +1,4 @@
-# 36. Valid Sudoku Medium Topics Companies
+# 36. Valid Sudoku
 
 [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/description/)
 [Neetcode Solution](https://www.youtube.com/watch?v=TjFXEUCMqI8&pp=ygUVbmVldGNvZGUgdmFsaWQgc3Vkb2t1)

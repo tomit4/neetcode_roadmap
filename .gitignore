@@ -2,3 +2,4 @@
 attempts
 bin
 *.clang-format
+build

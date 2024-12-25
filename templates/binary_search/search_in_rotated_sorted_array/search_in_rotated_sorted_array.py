@@ -16,3 +16,9 @@ if __name__ == "__main__":
 
     print(solution.search(nums=[1], target=0))
     assert solution.search(nums=[1], target=0) == -1
+
+    print(solution.search(nums=[1, 3], target=3))
+    assert solution.search(nums=[1, 3], target=3) == 1
+
+    print(solution.search(nums=[3, 5, 1], target=3))
+    assert solution.search(nums=[3, 5, 1], target=3) == 0

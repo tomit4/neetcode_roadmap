@@ -54,6 +54,28 @@ class Solution:
         return depth_first_search(root)[0]
 
 
+# NOTE: Different solution from Leetcode:
+class Solution:
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        if root is None:
+            return True
+
+        # Recursive function to get the height of a node
+        def get_height(node):
+            if node is None:
+                return 0
+            return max(get_height(node.left), get_height(node.right)) + 1
+
+        left_height = get_height(root.left)
+        right_height = get_height(root.right)
+        height_diff = abs(left_height - right_height)
+
+        left_balanced = self.isBalanced(root.left)
+        right_balanced = self.isBalanced(root.right)
+
+        return height_diff <= 1 and left_balanced and right_balanced
+
+
 if __name__ == "__main__":
     solution = Solution()
     tree_as_list_1 = convert_list_to_tree(arr=[3, 9, 20, None, None, 15, 7])

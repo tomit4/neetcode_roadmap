@@ -49,3 +49,8 @@ if __name__ == "__main__":
     max_depth_of_tree_2 = solution.maxDepth(tree_as_list_2)
     print(max_depth_of_tree_2)
     assert max_depth_of_tree_2 == 2
+
+    tree_as_list_3 = convert_list_to_tree(arr=[-8, -6, 7, 6, None, None, None, None, 5])
+    max_depth_of_tree_3 = solution.maxDepth(tree_as_list_3)
+    print(max_depth_of_tree_3)
+    assert max_depth_of_tree_3 == 4

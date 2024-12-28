@@ -4,12 +4,21 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define RED "\x1b[31m"
+#define GREEN "\x1b[32m"
+#define YELLOW "\x1b[33m"
+#define BLUE "\x1b[34m"
+#define MAGENTA "\x1b[35m"
+#define CYAN "\x1b[36m"
+#define BOLD "\x1b[1m"
+#define RESET "\x1b[0m"
+
 void randomize(void);
 int gen_random(int max);
 bool is_yes_or_no(char yes_or_no);
 
 struct exercise {
-	char exercise[30];
+	char exercise[60];
 	int total_successes;
 	int max_tries;
 };
@@ -26,17 +35,18 @@ int main(void)
 
 	randomize();
 
-	printf("How Many Exercises Would You Like To Do? ");
+	printf(BLUE BOLD "How Many Exercises Would You Like To Do? " RESET);
 	scanf("%d", &num_of_exercises);
 
 	struct exercise exercises[num_of_exercises];
 
 	for (i = 0; i < num_of_exercises; i++) {
-		printf("Please enter exercise #%d: ", i + 1);
-		scanf("%29s", exercises[i].exercise);
+		printf(BLUE BOLD "Please enter exercise #%d: " RESET, i + 1);
+		scanf("%59s", exercises[i].exercise);
 	}
 
-	printf("How Many Tries per exercise would you like to try? ");
+	printf(BLUE BOLD
+	       "How Many Tries per exercise would you like to try? " RESET);
 	scanf("%d", &num_of_tries);
 
 	for (j = 0; j < num_of_exercises; j++) {
@@ -52,16 +62,21 @@ int main(void)
 			print_total_score(num_of_exercises, exercises);
 		}
 
-		printf("Please implement %s\n", exercises[k].exercise);
-		printf("Did you implement %s correctly? (y/n) ",
+		printf(GREEN BOLD "Please implement %s\n" RESET,
+		       exercises[k].exercise);
+		printf(GREEN BOLD
+		       "Did you implement %s correctly? (y/n) " RESET,
 		       exercises[k].exercise);
 		do {
 			yes_or_no = getchar();
 		} while (isspace(yes_or_no));
 
 		while (!is_yes_or_no(yes_or_no)) {
-			printf("error: please enter either 'y' or 'n'\n");
-			printf("Did you implement %s correctly? (y/n) ",
+			printf(RED BOLD
+			       "ﴫ error: please enter either 'y' or 'n' "
+			       "ﴫ\n" RESET);
+			printf(GREEN BOLD
+			       "Did you implement %s correctly? (y/n) " RESET,
 			       exercises[k].exercise);
 			do {
 				yes_or_no = getchar();
@@ -81,7 +96,9 @@ int main(void)
 		}
 	}
 
-	printf("All exercises completed successfully! Good job!\n");
+	printf(MAGENTA BOLD
+	       "\n All exercises completed successfully! Good job! "
+	       "\n" RESET);
 	print_total_score(num_of_exercises, exercises);
 
 	exit(EXIT_SUCCESS);
@@ -97,7 +114,7 @@ bool is_yes_or_no(char yes_or_no)
 void print_total_score(int num_of_exercises, struct exercise exercises[])
 {
 	int i;
-	printf("\nTotal Score:\n");
+	printf(YELLOW BOLD "\nTotal Score:\n" RESET);
 	for (i = 0; i < num_of_exercises; i++) {
 		printf("%s: (%d/%d)\n", exercises[i].exercise,
 		       exercises[i].total_successes, exercises[i].max_tries);

@@ -16,18 +16,13 @@ root.right.right = TreeNode(7)
 
 
 def sum_tree(root: TreeNode | None) -> int:
-    total = 0
+    if not root:
+        return 0
 
-    def dfs(node: TreeNode | None):
-        nonlocal total
-        if not node:
-            return
+    total = root.value
+    total += sum_tree(root.left)
+    total += sum_tree(root.right)
 
-        total += node.value
-        dfs(node.left)
-        dfs(node.right)
-
-    dfs(root)
     return total
 
 

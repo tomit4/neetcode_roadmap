@@ -12,7 +12,7 @@ root.left.left = TreeNode(4)
 root.left.right = TreeNode(5)
 
 
-def print_all_leaf_nodes(root: TreeNode | None):
+def print_all_leaf_nodes(root: TreeNode | None) -> None:
     if not root:
         return
 

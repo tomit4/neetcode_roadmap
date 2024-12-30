@@ -1,4 +1,4 @@
-from typing import List, Optional, Union
+from typing import Dict, List, Optional, Tuple, Union
 
 
 # Definition for a binary tree node.
@@ -35,20 +35,69 @@ def convert_list_to_tree(arr: List[Union[int, None]]) -> Optional[TreeNode]:
 
 class Solution:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        res: List[int] = [0]
+        if not root:
+            return 0
 
-        def depth_first_search(root) -> int:
+        stack: List[Tuple[Optional[TreeNode], bool]] = [(root, True)]
+        diameter = 0
+        heights: Dict[Optional[TreeNode], int] = {}
+
+        while stack:
+            node, state = stack.pop()
+
+            if not node:
+                continue
+
+            if state:
+                stack.append((node, False))
+                stack.append((node.left, True))  # type:ignore
+                stack.append((node.right, True))  # type:ignore
+            else:
+                left_height = heights.get(node.left, 0)
+                right_height = heights.get(node.right, 0)
+                node_height = 1 + max(left_height, right_height)
+                heights[node] = node_height
+                diameter = max(diameter, left_height + right_height)
+
+        return diameter
+
+
+class Solution_1:
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        def dfs(node: Optional[TreeNode]) -> Tuple[int, int]:
+            if not node:
+                return 0, 0
+
+            left_height, left_diameter = dfs(node.left)
+            right_height, right_diameter = dfs(node.right)
+
+            height = 1 + max(left_height, right_height)
+            diameter = max(left_diameter, right_diameter, left_height + right_height)
+
+            return height, diameter
+
+        return dfs(root)[1]
+
+
+class Solution_2:
+    def diameterOfBinaryTree_1(self, root: Optional[TreeNode]) -> int:
+        res = 0
+
+        def dfs(root):
+            nonlocal res
+            # if this doesn't exist(there wasn't an edge here),
+            # decrement the res count
             if not root:
-                return -1  # accounts for null node
-            left: int = depth_first_search(root.left)  # finds height of left subtree
-            right: int = depth_first_search(root.right)  # finds height of right subtree
-
-            res[0] = max(res[0], 2 + left + right)
-
+                return -1
+            left = dfs(root.left)
+            right = dfs(root.right)
+            # return 2 edges if both nodes exist, otherwise return 1 or 0
+            res = max(res, 2 + left + right)
+            # add 1 edge to the total
             return 1 + max(left, right)
 
-        depth_first_search(root)
-        return res[0]
+        dfs(root)
+        return res
 
 
 if __name__ == "__main__":
@@ -62,3 +111,8 @@ if __name__ == "__main__":
     diameter_of_binary_tree_2 = solution.diameterOfBinaryTree(tree_as_list_2)
     print(diameter_of_binary_tree_2)
     assert diameter_of_binary_tree_2 == 1
+
+    tree_as_list_3 = convert_list_to_tree(arr=[1])
+    diameter_of_binary_tree_3 = solution.diameterOfBinaryTree(tree_as_list_3)
+    print(diameter_of_binary_tree_3)
+    assert diameter_of_binary_tree_3 == 0

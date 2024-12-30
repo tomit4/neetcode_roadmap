@@ -33,6 +33,32 @@ def convert_list_to_tree(arr: List[Union[int, None]]) -> Optional[TreeNode]:
     return root
 
 
+# Iterative, ranks poorly on leetcode due to extra memory
+class Solution_iterative:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        stack_p = [p]
+        stack_q = [q]
+
+        while stack_p and stack_q:
+            p_node = stack_p.pop()
+            q_node = stack_q.pop()
+            if not p_node and not q_node:
+                continue
+
+            if not p_node or not q_node or p_node.val != q_node.val:
+                return False
+
+            stack_p.append(p_node.left)
+            stack_p.append(p_node.right)
+            stack_q.append(q_node.left)
+            stack_q.append(q_node.right)
+
+        # NOTE: How we don't use len(stack_p) == len(stack_q)
+        # This is because we could have two mirrored trees (p.left = q.right)
+        # This edge case would pass True if we used len(), thusly we check if both are empty instead
+        return not stack_p and not stack_q
+
+
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         if not p and not q:

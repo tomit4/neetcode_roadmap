@@ -34,22 +34,25 @@ def convert_list_to_tree(arr: List[Union[int, None]]) -> Optional[TreeNode]:
 
 
 # GPT
-# Incorrect
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
-        def check_height(node: Optional[TreeNode]) -> int:
+        def dfs(node):
             if not node:
                 return 0
 
-            left_height = check_height(node.left)
-            right_height = check_height(node.right)
+            left_height = dfs(node.left)
+            right_height = dfs(node.right)
 
-            if abs(left_height - right_height) > 1:
+            if (
+                left_height == -1
+                or right_height == -1
+                or abs(left_height - right_height) > 1
+            ):
                 return -1
 
             return 1 + max(left_height, right_height)
 
-        return check_height(root) != -1
+        return dfs(root) != -1
 
 
 class Solution:

@@ -34,6 +34,7 @@ def convert_list_to_tree(arr: List[Union[int, None]]) -> Optional[TreeNode]:
 
 
 # GPT
+# Incorrect
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         def check_height(node: Optional[TreeNode]) -> int:
@@ -73,7 +74,7 @@ class Solution:
 
 
 # NOTE: Different solution from Leetcode:
-class Solution:
+class Solution_3:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         if root is None:
             return True
@@ -110,3 +111,10 @@ if __name__ == "__main__":
     is_tree_balanced_3 = solution.isBalanced(tree_as_list_3)
     print(is_tree_balanced_3)
     assert is_tree_balanced_3 == True
+
+    tree_as_list_4 = convert_list_to_tree(
+        arr=[1, 2, 2, 3, None, None, 3, 4, None, None, 4]
+    )
+    is_tree_balanced_4 = solution.isBalanced(tree_as_list_4)
+    print(is_tree_balanced_4)
+    assert is_tree_balanced_4 == False

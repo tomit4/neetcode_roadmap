@@ -33,7 +33,7 @@ def convert_list_to_tree(arr: List[Union[int, None]]) -> Optional[TreeNode]:
     return root
 
 
-class Solution:
+class Solution_5:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
@@ -80,7 +80,7 @@ class Solution_1:
 
 
 class Solution_2:
-    def diameterOfBinaryTree_1(self, root: Optional[TreeNode]) -> int:
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         res = 0
 
         def dfs(root):
@@ -98,6 +98,27 @@ class Solution_2:
 
         dfs(root)
         return res
+
+
+# Note: Similar to above, but more readable and understandable due to use of
+# self.diameter instead of res and more intuitive math
+class Solution:
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        self.diameter = 0
+
+        def dfs(node):
+            if not node:
+                return 0
+
+            left_height = dfs(node.left)
+            right_height = dfs(node.right)
+
+            self.diameter = max(self.diameter, left_height + right_height)
+
+            return 1 + max(left_height, right_height)
+
+        dfs(root)
+        return self.diameter
 
 
 if __name__ == "__main__":

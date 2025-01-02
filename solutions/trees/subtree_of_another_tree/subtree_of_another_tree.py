@@ -70,3 +70,9 @@ if __name__ == "__main__":
     is_sub_tree_2 = solution.isSubtree(root=root_2, subRoot=sub_root_2)
     print(is_sub_tree_2)
     assert is_sub_tree_2 == False
+
+    root_3 = convert_list_to_tree(arr=[1])
+    sub_root_3 = convert_list_to_tree(arr=[1])
+    is_sub_tree_3 = solution.isSubtree(root=root_3, subRoot=sub_root_3)
+    print(is_sub_tree_3)
+    assert is_sub_tree_3 == True

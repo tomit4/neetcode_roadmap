@@ -39,3 +39,22 @@ if __name__ == "__main__":
     print("param_3 :=>", param_3)
     param_4 = time_map.get(key="foo", timestamp=5)
     print("param_4 :=>", param_4)
+
+    time_map_2: TimeMap = TimeMap()
+    time_map_2.set(key="love", value="high", timestamp=10)
+    time_map_2.set(key="love", value="low", timestamp=20)
+    param_4 = time_map_2.get(key="love", timestamp=5)
+    print(param_4)
+    assert param_4 == ""
+    param_5 = time_map_2.get(key="love", timestamp=10)
+    print(param_5)
+    assert param_5 == "high"
+    param_6 = time_map_2.get(key="love", timestamp=15)
+    print(param_6)
+    assert param_6 == "high"
+    param_7 = time_map_2.get(key="love", timestamp=20)
+    print(param_7)
+    assert param_7 == "low"
+    param_8 = time_map_2.get(key="love", timestamp=25)
+    print(param_8)
+    assert param_8 == "low"

@@ -99,3 +99,8 @@ if __name__ == "__main__":
     level_order_3 = solution.levelOrder(tree_as_list_3)
     print(level_order_3)
     assert level_order_3 == []
+
+    tree_as_list_4 = convert_list_to_tree(arr=[1, 2, 3, 4, None, None, 5])
+    level_order_4 = solution.levelOrder(tree_as_list_4)
+    print(level_order_4)
+    assert level_order_4 == [[1], [2, 3], [4, 5]]

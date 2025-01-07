@@ -33,7 +33,7 @@ def convert_list_to_tree(arr: List[Union[int, None]]) -> Optional[TreeNode]:
     return root
 
 
-class Solution:
+class Solution_recursive:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
 
         def valid(node, left, right):
@@ -49,6 +49,23 @@ class Solution:
         return valid(root, float("-inf"), float("inf"))
 
 
+class Solution_iterative:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        if not root:
+            return True
+        stack = [(root, float("-inf"), float("inf"))]
+        while stack:
+            node, left, right = stack.pop()
+            if node.val <= left or node.val >= right:
+                return False
+            if node.left:
+                stack.append((node.left, left, node.val))
+            if node.right:
+                stack.append((node.right, node.val, right))
+
+        return True
+
+
 if __name__ == "__main__":
     solution = Solution()
     tree_as_list_1 = convert_list_to_tree(arr=[2, 1, 3])
@@ -60,3 +77,8 @@ if __name__ == "__main__":
     is_valid_bst_2 = solution.isValidBST(tree_as_list_2)
     print(is_valid_bst_2)
     assert is_valid_bst_2 == False
+
+    tree_as_list_3 = convert_list_to_tree(arr=[5, 4, 6, None, None, 3, 7])
+    is_valid_bst_3 = solution.isValidBST(tree_as_list_3)
+    print(is_valid_bst_3)
+    assert is_valid_bst_3 == False

@@ -137,3 +137,41 @@ if __name__ == "__main__":
     diameter_of_binary_tree_3 = solution.diameterOfBinaryTree(tree_as_list_3)
     print(diameter_of_binary_tree_3)
     assert diameter_of_binary_tree_3 == 0
+
+    tree_as_list_4 = convert_list_to_tree(
+        arr=[
+            4,
+            -7,
+            -3,
+            None,
+            None,
+            -9,
+            -3,
+            9,
+            -7,
+            -4,
+            None,
+            6,
+            None,
+            -6,
+            -6,
+            None,
+            None,
+            0,
+            6,
+            5,
+            None,
+            9,
+            None,
+            None,
+            -1,
+            -4,
+            None,
+            None,
+            None,
+            -2,
+        ]
+    )
+    diameter_of_binary_tree_4 = solution.diameterOfBinaryTree(tree_as_list_4)
+    print(diameter_of_binary_tree_4)
+    assert diameter_of_binary_tree_4 == 8

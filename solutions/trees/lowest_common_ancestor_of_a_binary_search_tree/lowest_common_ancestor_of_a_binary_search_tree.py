@@ -72,6 +72,8 @@ class Solution:
             else:
                 return cur
 
+        return None
+
 
 if __name__ == "__main__":
     solution = Solution()
@@ -99,5 +101,5 @@ if __name__ == "__main__":
     lowest_common_ancestor_3 = solution.lowestCommonAncestor(
         tree_as_list_3, p=p_3, q=q_3
     )
-    print(convert_tree_to_list(lowest_common_ancestor_3)[0])
+    print(convert_tree_to_list(lowest_common_ancestor_3)[-1])
     assert convert_tree_to_list(lowest_common_ancestor_3)[0] == 2

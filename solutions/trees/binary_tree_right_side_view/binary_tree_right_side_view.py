@@ -74,8 +74,10 @@ class Solution:
             for _ in range(queue_len):
                 node: TreeNode = queue.popleft()
                 if node:
+                    # the first node popped will always be right side as long as...
                     right_side = node
-                    queue.append(node.left)  # must add left node before right node
+                    # you always add left node before right node
+                    queue.append(node.left)
                     queue.append(node.right)
 
             if right_side:

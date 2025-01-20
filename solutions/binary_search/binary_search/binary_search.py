@@ -24,4 +24,10 @@ class Solution:
 if __name__ == "__main__":
     solution = Solution()
     print(solution.search(nums=[-1, 0, 3, 5, 9, 12], target=9))
+    assert solution.search(nums=[-1, 0, 3, 5, 9, 12], target=9) == 4
+
     print(solution.search(nums=[-1, 0, 3, 5, 9, 12], target=2))
+    assert solution.search(nums=[-1, 0, 3, 5, 9, 12], target=2) == -1
+
+    print(solution.search(nums=[-1, 0, 3, 5, 9, 12], target=0))
+    assert solution.search(nums=[-1, 0, 3, 5, 9, 12], target=0) == 1
